@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>射手座 ♐ 7月感情運勢・盧恩占卜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:       #FDF6EE;
+    --orange:   #E8784A;
+    --peach:    #F5A87A;
+    --purple:   #9B6EC8;
+    --lavender: #C4A8E0;
+    --gold:     #E8B84A;
+    --ink:      #2D1A0E;
+    --ink-dim:  #6B4A30;
+    --white:    #FFFCF8;
+    --card-bg:  rgba(255,252,248,0.9);
+    --card-border: rgba(232,120,74,0.2);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(ellipse 800px 600px at 0% 0%, rgba(232,184,74,0.2), transparent 55%),
+      radial-gradient(ellipse 700px 600px at 100% 20%, rgba(155,110,200,0.18), transparent 55%),
+      radial-gradient(ellipse 600px 400px at 40% 100%, rgba(232,120,74,0.15), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    line-height:2;
+    overflow-x:hidden;
+  }
+  .container{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{animation:fadeUp 0.95s cubic-bezier(.2,.7,.3,1) both;animation-play-state:paused;}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes sparkle{0%,100%{opacity:0;transform:scale(0.3) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(180deg)}}
+
+  .floaty{position:fixed;pointer-events:none;z-index:0;animation:float var(--d) ease-in-out infinite;}
+  .spark{position:fixed;pointer-events:none;z-index:0;animation:sparkle var(--d) ease-in-out infinite;}
+
+  /* HERO */
+  header.hero{position:relative;text-align:center;padding:96px 24px 80px;overflow:hidden;}
+  .hero-deco{position:absolute;top:50%;left:50%;transform:translate(-50%,-54%);width:520px;height:520px;opacity:0.08;z-index:0;}
+  .hero-content{position:relative;z-index:1;}
+  .eyebrow{font-size:12.5px;letter-spacing:0.44em;color:var(--orange);font-weight:700;margin-bottom:20px;text-transform:uppercase;}
+  .hero h1{
+    font-family:'Noto Serif TC',serif;font-weight:900;
+    font-size:clamp(38px,7.5vw,64px);line-height:1.2;
+    background:linear-gradient(135deg,var(--orange) 0%,var(--gold) 40%,var(--purple) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    margin-bottom:10px;
+  }
+  .hero .sub{font-family:'Noto Serif TC',serif;font-size:clamp(17px,3vw,22px);color:var(--ink-dim);margin-bottom:28px;}
+  .hero p.lede{max-width:540px;margin:0 auto;font-size:16px;color:var(--ink-dim);line-height:2.1;}
+  .dawn-line{width:100px;height:2px;margin:30px auto;background:linear-gradient(90deg,transparent,var(--orange),var(--gold),var(--purple),transparent);border-radius:2px;}
+  .scroll-hint{font-size:12px;letter-spacing:0.28em;color:var(--orange);opacity:0.7;margin-top:8px;}
+  .scroll-hint svg{display:block;margin:10px auto 0;animation:bob 2s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+  /* SECTION */
+  section{position:relative;padding:58px 0;z-index:1;}
+  .section-title{font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(21px,3.8vw,27px);text-align:center;margin-bottom:12px;color:var(--ink);}
+  .section-sub{text-align:center;color:var(--ink-dim);font-size:14.5px;max-width:480px;margin:0 auto 44px;}
+  .divider{width:56px;height:2px;margin:0 auto 44px;background:linear-gradient(90deg,transparent,var(--orange),var(--purple),transparent);}
+
+  /* GOOD VIBE BANNER */
+  .good-banner{
+    background:linear-gradient(135deg,rgba(232,120,74,0.12),rgba(155,110,200,0.12));
+    border-radius:26px;padding:38px 34px;text-align:center;
+    border:1px solid rgba(232,120,74,0.25);
+    position:relative;overflow:hidden;
+  }
+  .good-banner::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 20%,rgba(232,184,74,0.1),transparent 50%);
+  }
+  .good-banner .b-icon{font-size:38px;display:block;margin-bottom:16px;position:relative;}
+  .good-banner h3{font-family:'Noto Serif TC',serif;font-size:21px;color:var(--orange);margin-bottom:14px;position:relative;}
+  .good-banner p{color:var(--ink-dim);font-size:15.5px;max-width:500px;margin:0 auto;position:relative;}
+
+  /* ORACLE CARDS */
+  .card-grid{display:flex;flex-direction:column;gap:24px;}
+  .oracle-card{
+    background:var(--card-bg);border:1px solid var(--card-border);
+    border-radius:22px;padding:30px 28px;
+    box-shadow:0 10px 34px -18px rgba(45,26,14,0.15);
+    transition:transform .3s,box-shadow .3s;
+  }
+  .oracle-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px -18px rgba(232,120,74,0.25);}
+  .card-top{display:flex;align-items:center;gap:15px;margin-bottom:14px;}
+  .card-glyph{
+    width:52px;height:52px;min-width:52px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Noto Serif TC',serif;font-size:22px;font-weight:700;color:white;
+  }
+  .g-orange{background:linear-gradient(135deg,#F5A87A,var(--orange));}
+  .g-purple{background:linear-gradient(135deg,#C4A8E0,var(--purple));}
+  .g-gold{background:linear-gradient(135deg,#F5D07A,var(--gold));color:#3D2800;}
+  .g-zi{background:linear-gradient(135deg,#D4A87A,#B87040);font-size:14px;}
+  .card-name{font-family:'Noto Serif TC',serif;font-weight:700;font-size:18px;color:var(--ink);}
+  .card-pos{display:inline-block;margin-top:4px;font-size:11.5px;padding:3px 10px;border-radius:999px;font-weight:700;}
+  .pos-up{background:rgba(232,120,74,0.15);color:#B05030;}
+  .pos-zi{background:rgba(155,110,200,0.15);color:#7050A0;}
+  .card-body{color:var(--ink-dim);font-size:15px;}
+
+  /* SITUATIONS */
+  .situation-list{display:flex;flex-direction:column;gap:32px;}
+  .situation{
+    background:var(--card-bg);border-radius:22px;padding:34px 30px;
+    box-shadow:0 8px 28px -15px rgba(45,26,14,0.13);
+    border:1px solid var(--card-border);
+    border-left:4px solid var(--orange);
+  }
+  .s2{border-left-color:var(--purple);}
+  .s3{border-left-color:var(--gold);}
+  .sit-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.1em;padding:3px 13px;border-radius:999px;margin-bottom:13px;}
+  .s1 .sit-tag{background:rgba(232,120,74,0.15);color:#B05030;}
+  .s2 .sit-tag{background:rgba(155,110,200,0.15);color:#7050A0;}
+  .s3 .sit-tag{background:rgba(232,184,74,0.2);color:#907020;}
+  .situation h3{font-family:'Noto Serif TC',serif;font-weight:700;font-size:19px;margin-bottom:13px;color:var(--ink);}
+  .situation p{color:var(--ink-dim);font-size:15px;}
+
+  /* ROMANCE TIPS */
+  .romance-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .romance-card{
+    background:var(--card-bg);border:1px solid var(--card-border);
+    border-radius:20px;padding:24px 22px;text-align:center;
+    box-shadow:0 6px 22px -14px rgba(45,26,14,0.12);
+    transition:transform .3s,box-shadow .3s;
+  }
+  .romance-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px -14px rgba(232,120,74,0.22);}
+  .romance-card .r-icon{font-size:28px;display:block;margin-bottom:10px;}
+  .romance-card h4{font-family:'Noto Serif TC',serif;font-size:15.5px;color:var(--ink);margin-bottom:8px;}
+  .romance-card p{font-size:13.5px;color:var(--ink-dim);line-height:1.8;}
+
+  /* QUOTE */
+  .quote-box{
+    background:linear-gradient(135deg,rgba(232,120,74,0.1),rgba(155,110,200,0.1));
+    border-radius:22px;padding:44px 36px;text-align:center;
+    border:1px solid rgba(232,120,74,0.2);
+  }
+  .quote-box .qm{font-family:'Noto Serif TC',serif;font-size:52px;color:var(--orange);opacity:0.4;line-height:0.5;display:block;margin-bottom:16px;}
+  .quote-box p{font-family:'Noto Serif TC',serif;font-size:17.5px;color:var(--ink);max-width:500px;margin:0 auto;line-height:2.1;}
+
+  /* CTA */
+  .cta-section{padding:70px 0 100px;}
+  .cta-header{text-align:center;margin-bottom:44px;}
+  .cta-eyebrow{font-size:12.5px;letter-spacing:0.35em;color:var(--orange);font-weight:700;margin-bottom:14px;text-transform:uppercase;display:block;}
+  .cta-header h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(21px,3.8vw,28px);color:var(--ink);margin-bottom:13px;}
+  .cta-header p{color:var(--ink-dim);font-size:15px;max-width:460px;margin:0 auto;}
+  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:32px;}
+  .cta-opt{
+    background:var(--card-bg);border:1px solid var(--card-border);
+    border-radius:20px;padding:26px 22px;text-align:center;
+    box-shadow:0 6px 22px -14px rgba(45,26,14,0.12);
+    transition:transform .3s,box-shadow .3s,border-color .3s;
+  }
+  .cta-opt:hover{transform:translateY(-4px);box-shadow:0 16px 36px -16px rgba(232,120,74,0.25);border-color:rgba(232,120,74,0.4);}
+  .cta-opt .icon{font-size:26px;display:block;margin-bottom:11px;}
+  .cta-opt h3{font-family:'Noto Serif TC',serif;font-size:16px;color:var(--ink);margin-bottom:9px;}
+  .cta-opt p{font-size:13px;color:var(--ink-dim);margin-bottom:16px;line-height:1.8;}
+  .line-btn{
+    display:inline-flex;align-items:center;gap:6px;padding:8px 20px;
+    background:linear-gradient(135deg,var(--orange),var(--purple));
+    color:white;font-weight:700;border-radius:999px;font-size:13.5px;
+    text-decoration:none;transition:opacity .2s,transform .2s;
+  }
+  .line-btn:hover{opacity:0.85;transform:translateY(-1px);}
+  .cta-note{
+    text-align:center;background:rgba(232,120,74,0.07);
+    border:1px solid rgba(232,120,74,0.18);
+    border-radius:14px;padding:20px 24px;color:var(--ink-dim);font-size:14px;
+  }
+
+  footer{text-align:center;padding:40px 24px 60px;font-size:12.5px;color:rgba(232,120,74,0.45);letter-spacing:0.08em;}
+
+  @media(max-width:600px){
+    .hero{padding:80px 20px 64px;}
+    .cta-grid{grid-template-columns:1fr;}
+    .romance-grid{grid-template-columns:1fr;}
+    .situation,.oracle-card{padding:24px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<script>
+  const floaties=[
+    {top:'8%',left:'5%',size:10,d:'6s',emoji:'✨'},
+    {top:'18%',left:'90%',size:12,d:'8s',emoji:'🌟'},
+    {top:'45%',left:'3%',size:10,d:'7s',emoji:'💫'},
+    {top:'70%',left:'93%',size:12,d:'9s',emoji:'✨'},
+    {top:'85%',left:'8%',size:10,d:'6.5s',emoji:'🌟'},
+  ];
+  document.addEventListener('DOMContentLoaded',()=>{
+    floaties.forEach((f,i)=>{
+      const el=document.createElement('div');
+      el.className='floaty';
+      el.style.cssText=`top:${f.top};left:${f.left};font-size:${f.size}px;--d:${f.d};opacity:0.35;animation-delay:${i*1.2}s`;
+      el.textContent=f.emoji;
+      document.body.appendChild(el);
+    });
+  });
+</script>
+
+<header class="hero">
+  <svg class="hero-deco" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="95" fill="none" stroke="#E8784A" stroke-width="1.2"/>
+    <circle cx="100" cy="100" r="78" fill="none" stroke="#E8B84A" stroke-width="0.8" stroke-dasharray="4 6"/>
+    <circle cx="100" cy="100" r="60" fill="none" stroke="#9B6EC8" stroke-width="1"/>
+    <circle cx="100" cy="100" r="42" fill="none" stroke="#E8784A" stroke-width="0.6" stroke-dasharray="2 5"/>
+    <circle cx="100" cy="100" r="24" fill="none" stroke="#E8B84A" stroke-width="0.8"/>
+    <!-- 箭矢裝飾 -->
+    <line x1="20" y1="100" x2="180" y2="100" stroke="#E8784A" stroke-width="0.8" opacity="0.5"/>
+    <polygon points="175,96 185,100 175,104" fill="#E8784A" opacity="0.5"/>
+  </svg>
+  <div class="hero-content reveal">
+    <div class="eyebrow">July Rune Reading · 2026</div>
+    <h1>♐ 射手座</h1>
+    <div class="sub">7月感情運勢｜盧恩符文 × 紫微斗數</div>
+    <div class="dawn-line"></div>
+    <p class="lede">這個月的射手座，感情的箭正中靶心。四張全正位的盧恩符文，說的是你這個月不只有好運——你有勇氣、有新生、有根基、有桃花。好的事情，正在路上。</p>
+    <div class="scroll-hint">
+      展開你的幸運牌陣
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8784A" stroke-width="1.8"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- GOOD VIBE -->
+  <section id="keynote">
+    <div class="good-banner reveal">
+      <span class="b-icon">🎯</span>
+      <h3>這個月的核心訊息：四牌全正位，感情大吉！</h3>
+      <p>Uruz 的生命力、Berkana 的新生、Ingwaz 的成熟能量、Eihwaz 的穩定根基——四張牌齊聚，加上天相的浪漫照顧、地支亥的豐沛桃花，射手座這個月的感情能量是今年少見的全面開花。可能有新緣分介紹、可能有浪漫的相遇、可能是現有關係迎來讓人心跳加速的轉折。</p>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section id="cards">
+    <h2 class="section-title">這次的牌陣</h2>
+    <p class="section-sub">四張全正位的盧恩符文，說出你這個月感情能量滿滿的原因。</p>
+    <div class="divider"></div>
+
+    <div class="card-grid">
+
+      <article class="oracle-card reveal">
+        <div class="card-top">
+          <div class="card-glyph g-orange">ᚢ</div>
+          <div>
+            <div class="card-name">Uruz 野牛・勇氣</div>
+            <span class="card-pos pos-up">盧恩・正位</span>
+          </div>
+        </div>
+        <div class="card-body">
+          Uruz 是原始的生命力和勇氣，它出現代表你這個月的感情魅力值拉到最高——你散發出的能量是真實、有力量、讓人印象深刻的。這張牌也鼓勵你勇敢一點：有心動的感覺就去追，有機會就抓住，Uruz 的能量支持你大膽行動。
+        </div>
+      </article>
+
+      <article class="oracle-card reveal">
+        <div class="card-top">
+          <div class="card-glyph g-purple">ᛒ</div>
+          <div>
+            <div class="card-name">Berkana 樺樹・新生</div>
+            <span class="card-pos pos-up">盧恩・正位</span>
+          </div>
+        </div>
+        <div class="card-body">
+          Berkana 是新的開始與滋養的能量，代表這個月有一段嶄新的感情可能正在萌芽或即將開花。如果你最近有一個讓你感覺「好像和以前不太一樣」的人，這張牌說：你的感覺是對的，這份新生是真實的。
+        </div>
+      </article>
+
+      <article class="oracle-card reveal">
+        <div class="card-top">
+          <div class="card-glyph g-gold">ᛜ</div>
+          <div>
+            <div class="card-name">Ingwaz 種子・成熟</div>
+            <span class="card-pos pos-up">盧恩・正位</span>
+          </div>
+        </div>
+        <div class="card-body">
+          Ingwaz 代表內在能量已經完成積累，種子準備破土——你等待或期盼的那件感情上的事，這個月有非常高的機率真的發生。不是「快了」，而是「到了」。這張牌是整個牌陣最令人興奮的訊號之一。
+        </div>
+      </article>
+
+      <article class="oracle-card reveal">
+        <div class="card-top">
+          <div class="card-glyph g-orange">ᛇ</div>
+          <div>
+            <div class="card-name">Eihwaz 紫杉・根基</div>
+            <span class="card-pos pos-up">盧恩・正位</span>
+          </div>
+        </div>
+        <div class="card-body">
+          Eihwaz 是紫杉樹的符文，象徵穩定、韌性與深根。它出現在這裡說的是：這個月的感情不只是曇花一現的浪漫，而是有真實根基的連結。無論是新的緣分還是既有的關係，Eihwaz 說它有長久的潛力。
+        </div>
+      </article>
+
+      <article class="oracle-card reveal">
+        <div class="card-top">
+          <div class="card-glyph g-zi">天相<br>地亥</div>
+          <div>
+            <div class="card-name">天相星 × 地支亥</div>
+            <span class="card-pos pos-zi">紫微斗數</span>
+          </div>
+        </div>
+        <div class="card-body">
+          天相星是優雅、有品味、善於照顧人的星曜，在感情裡讓你既溫柔又有魅力，讓對方感受到被好好對待的安全感——你自然散發的那種體貼，就是你最大的戀愛優勢。地支亥代表情感豐沛、桃花旺盛，亥水流動順暢，這個月的緣分能量非常充足，可能有人主動介紹，或在意想不到的場合自然相遇。
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SITUATIONS -->
+  <section id="situations">
+    <h2 class="section-title">你的7月</h2>
+    <p class="section-sub">找到你的狀態，看看這波好運對你來說意味著什麼。</p>
+    <div class="divider"></div>
+
+    <div class="situation-list">
+
+      <div class="situation s1 reveal">
+        <span class="sit-tag">✦ 目前單身</span>
+        <h3>好緣分真的要來了，勇敢接住它</h3>
+        <p>Ingwaz 說等待的時機到了，Berkana 說新的開始在萌芽——這個月單身的射手座，真的很可能有新的緣分出現，可能是朋友介紹、可能是在某個活動上的自然相遇、也可能是某個你一直有感覺的人終於有了進展。地支亥的桃花能量讓你這個月特別容易吸引到人。Uruz 說勇氣是這個月最重要的武器——有心動就去行動，不要讓機會在猶豫裡溜走。天相星讓你在感情裡自然散發照顧人的溫柔，對的人會被這份真誠吸引過來。</p>
+      </div>
+
+      <div class="situation s2 reveal">
+        <span class="sit-tag">🌿 有交往對象</span>
+        <h3>關係即將迎來一個讓你心跳加速的里程碑</h3>
+        <p>Berkana 和 Ingwaz 同時出現，說的是這段關係正在開花，而且已經到了某個重要的節點——可能是一個重要的對話、一個新的決定，或是你們之間某件等待已久的事情終於要發生了。Eihwaz 說這段感情有真實的根基，不是衝動，是真的走得遠的那種。天相的浪漫能量提醒你這個月可以主動製造一些有儀式感的時刻——一頓用心的晚餐、一句說出口的「我很喜歡和你在一起」，都會讓這個月的甜蜜加倍。</p>
+      </div>
+
+      <div class="situation s3 reveal">
+        <span class="sit-tag">💛 有結婚對象／已婚</span>
+        <h3>長期關係迎來新的甜蜜期，一起去做一件新的事</h3>
+        <p>Eihwaz 的穩定根基加上 Berkana 的新生能量，在長期關係裡說的是：這段感情有新的章節要翻開了。不是改變，而是在穩固的基礎上長出新的東西——可能是一個新的共同計畫、一個新的習慣、或是兩人之間某種久違的輕鬆和浪漫重新出現。Uruz 說這個月你們之間的能量是活的、有生命力的，Ingwaz 說是時候把那個「一直想做但還沒做」的事情付諸行動了。天相提醒你，這個月對伴侶多一點溫柔的照顧，會讓感情的甜度再往上升一個層次。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ROMANCE TIPS -->
+  <section id="romance">
+    <h2 class="section-title">這個月的浪漫加分提醒</h2>
+    <p class="section-sub">天相星和地支亥給射手座的專屬戀愛小提示。</p>
+    <div class="divider"></div>
+
+    <div class="romance-grid reveal">
+      <div class="romance-card">
+        <span class="r-icon">💌</span>
+        <h4>說出那句話</h4>
+        <p>天相星的能量讓你的話語特別有溫度，這個月說出口的感受，對方接收到的會比平時更深。</p>
+      </div>
+      <div class="romance-card">
+        <span class="r-icon">🌹</span>
+        <h4>製造一個有儀式感的時刻</h4>
+        <p>不需要很大，一束花、一頓特別的晚餐、一個小小的驚喜——天相最懂得用細節讓人感動。</p>
+      </div>
+      <div class="romance-card">
+        <span class="r-icon">🎯</span>
+        <h4>勇敢接受介紹</h4>
+        <p>地支亥的桃花旺，這個月朋友的介紹或新的相遇不要輕易推掉，可能就是你在等的那個人。</p>
+      </div>
+      <div class="romance-card">
+        <span class="r-icon">✨</span>
+        <h4>去你平時不去的地方</h4>
+        <p>Uruz 說新的能量在新的場域裡等你，這個月多出去走走，好運和好緣分都在移動中相遇。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section id="quote">
+    <div class="quote-box reveal">
+      <span class="qm">"</span>
+      <p>射手座，你的箭從來不缺準頭，缺的只是那一刻放手的勇氣。這個月，弓已經拉滿，放開手，讓它飛吧。</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-header reveal">
+      <span class="cta-eyebrow">✦ 想讓好運更精準地落在你身上</span>
+      <h2>讓占卜幫你看清楚這波好運的走向</h2>
+      <p>感情能量這麼好，更值得用占卜確認方向、讓好的事情更準確地發生，而不是靠運氣等待。</p>
+    </div>
+
+    <div class="cta-grid reveal">
+      <div class="cta-opt">
+        <span class="icon">🔮</span>
+        <h3>盧恩符文占卜</h3>
+        <p>想知道對方真實的想法？想確認這波好運最可能在哪個方向開花？盧恩幫你看清楚現在的感情能量。</p>
+        <a class="line-btn" href="https://line.me/ti/p/~423hhxdn" target="_blank" rel="noopener">私訊了解</a>
+      </div>
+      <div class="cta-opt">
+        <span class="icon">⭐</span>
+        <h3>紫微斗數合盤</h3>
+        <p>想看兩個人的緣分深淺、命盤劇本走向？趁好運期合盤，看清楚這段緣分值不值得全力投入。</p>
+        <a class="line-btn" href="https://line.me/ti/p/~423hhxdn" target="_blank" rel="noopener">私訊了解</a>
+      </div>
+      <div class="cta-opt">
+        <span class="icon">💰</span>
+        <h3>金錢靈氣體驗</h3>
+        <p>感情好、財運也要好！金錢靈氣幫你調整豐盛能量，讓愛情和財富同步流進來。</p>
+        <a class="line-btn" href="https://line.me/ti/p/~423hhxdn" target="_blank" rel="noopener">私訊了解</a>
+      </div>
+      <div class="cta-opt">
+        <span class="icon">🌀</span>
+        <h3>奇門遁甲・開桃花</h3>
+        <p>已經很旺了還想更旺？奇門遁甲順應天地氣息，讓這個月的桃花能量發揮到最大值。</p>
+        <a class="line-btn" href="https://line.me/ti/p/~423hhxdn" target="_blank" rel="noopener">私訊了解</a>
+      </div>
+    </div>
+
+    <div class="cta-note reveal">
+      📣 7月集體體驗冥想活動即將登場，趁好運期來冥想，讓美好的能量更穩固地落地，名額有限，歡迎隨時私訊詢問。
+    </div>
+  </div>
+</section>
+
+<footer>
+  ♐ Sagittarius Love Reading · Rune × Zi Wei · 2026 July
+</footer>
+
+<script>
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting) e.target.style.animationPlayState='running';});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
